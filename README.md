@@ -46,16 +46,16 @@ Create an isolated Python environment for your project:
 
 ```cmd
 # Create project folder
-mkdir ai-chat-project
-cd ai-chat-project
+mkdir ai-chat-series
+cd ai-chat-series
 
 # Create virtual environment
-python -m venv ai-env
+python -m venv ai_project
 
 # Activate environment (Windows)
-ai-env\Scripts\activate
+ai_project\Scripts\activate
 
-# You should see (ai-env) in your prompt
+# You should see (ai_project) in your prompt
 ```
 
 ### 5. Install Required Libraries
@@ -101,7 +101,7 @@ pip list | findstr python-dotenv
 ### Virtual Environment Issues
 - If activation fails: Check you're in the correct directory
 - For PowerShell: You may need to run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
-- For Command Prompt: Use `ai-env\Scripts\activate.bat`
+- For Command Prompt: Use `ai_project\Scripts\activate.bat`
 
 ### Windows-Specific Notes
 - Use Command Prompt OR PowerShell (both work)
