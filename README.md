@@ -52,12 +52,12 @@ mkdir ai-chat-project
 cd ai-chat-project
 
 # Create virtual environment
-python3 -m venv ai-env
+python3 -m venv ai_project
 
 # Activate environment (Mac)
-source ai-env/bin/activate
+source ai_project/bin/activate
 
-# You should see (ai-env) in your prompt
+# You should see (ai_project) in your prompt
 ```
 
 ### 5. Install Required Libraries
