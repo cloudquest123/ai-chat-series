@@ -1,4 +1,4 @@
-# Episode 5: Bare Minimum CLI Application (No AI)
+# Episode 6: Connecting to OpenAI (API Test)
 
 ## Table of Contents
 - [What You'll Build](#what-youll-build)
@@ -6,18 +6,22 @@
 - [Setup Instructions](#setup-instructions)
 - [Running the Application](#running-the-application)
 - [Features](#features)
-- [How It Works](#how-it-works)
+- [Environment Variables](#environment-variables)
+- [Expected Output](#expected-output)
+- [Troubleshooting](#troubleshooting)
 - [Key Concepts Learned](#key-concepts-learned)
-- [Code Structure](#code-structure)
+- [API Structure](#api-structure)
+- [Security Note](#security-note)
 - [Next Episode](#next-episode)
 - [Series Progress](#series-progress)
 - [Repository Navigation](#repository-navigation)
 
 ## What You'll Build
-A simple command-line interface that accepts user input and echoes it back. This is the foundation for our chat application.
+A simple test script to verify your OpenAI API connection works before building the full chat application.
 
 ## Prerequisites
-- Completed Episodes 1-4 (Python and VS Code installation)
+- Completed Episode 5 (CLI Basics)
+- OpenAI API key from [platform.openai.com](https://platform.openai.com)
 - Python 3.8+
 - Virtual environment set up
 
@@ -30,13 +34,13 @@ git clone https://github.com/cloudquest123/ai-chat-series.git
 cd ai-chat-series
 
 # Switch to this episode's branch  
-git checkout episode-05-cli-app
+git checkout episode-06-openai-connect
 
 # Pull latest changes
-git pull origin episode-05-cli-app
+git pull origin episode-06-openai-connect
 ```
 
-### 2. Create and Activate Virtual Environment
+### 2. Activate Your Virtual Environment
 **Note**: You already created `ai_project` in Episodes 4a/4b - just activate it:
 
 ```bash
@@ -58,68 +62,83 @@ python -m venv ai_project
 
 You should see `(ai_project)` in your prompt.
 
+### 3. Install Required Packages
+```bash
+pip install openai python-dotenv
+```
+
+### 4. Set Up Environment Variables
+```bash
+cp .env.example .env
+# Edit .env and add your OpenAI API key
+```
+
 ## Running the Application
 
 ```bash
-python cli_basics.py
+python openai_test.py
 ```
 
 **To stop the program**: Press `Ctrl+C` (Mac/Windows/Linux)
 
-**Expected Output:**
-```
-Simple CLI App
-Type 'quit' to exit
-------------------------------
-
-You: hello world
-Echo: hello world
-
-You: this is working
-Echo: this is working
-
-You: quit
-Goodbye!
-```
-
 ## Features
-- Simple input/output loop
-- Multiple exit commands (quit, exit, bye)
-- Input validation (skips empty inputs)
-- Clean exit handling
-- **No AI involved** - pure CLI mechanics
+- Secure API key storage using .env files
+- Simple OpenAI API connection test
+- Error handling for connection issues
+- Success/failure feedback
+- **No chat functionality yet** - pure API testing
 
 ## How It Works
-1. User types a message
-2. Program echoes the message back
-3. Continues until user types 'quit'
-4. Foundation for adding AI in later episodes
+1. Load API key from .env file
+2. Initialize OpenAI client
+3. Send test message to API
+4. Display response or error
+5. Foundation for Episode 7's chat app
 
-## Key Concepts Learned
-- Python while loops
-- User input handling with `input()`
-- String manipulation with `.strip()` and `.lower()`
-- Conditional logic for exit conditions
-- Function organization with `main()`
-
-## Code Structure
-```python
-def main():
-    # Print welcome message
-    # Start infinite loop
-    # Get user input
-    # Check for exit conditions
-    # Echo the input back
-    # Repeat until quit
+## Environment Variables
+Create a `.env` file with:
+```
+OPENAI_API_KEY=your-openai-api-key-here
 ```
 
-**Key Points:**
-- **No AI yet** - this is just the CLI foundation
-- **Echo functionality** - proves input/output works
-- **Clean structure** - ready for AI integration
+## Expected Output
+```
+OpenAI API Connection Test
+------------------------------
+API Test Result:
+AI Response: Connection successful!
+
+✅ OpenAI API connection successful!
+```
+
+## Troubleshooting
+If the connection fails, check:
+1. Your API key in the .env file
+2. Your internet connection
+3. Your OpenAI account has credits
+4. The API key has the correct permissions
+
+## Key Concepts Learned
+- Environment variable management with python-dotenv
+- OpenAI Python library usage
+- API authentication
+- Error handling with try/except blocks
+- Basic API request structure
+
+## API Structure
+```python
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": "Hello!"}],
+    max_tokens=50
+)
+```
 
 ## Next Episode
-Episode 6 will test connecting to the OpenAI API before we combine CLI with AI in Episode 7.
+Episode 7 will combine this API connection with the CLI foundation from Episode 5 to create our first working AI chat application.
+
+## Security Note
+Never commit your .env file to version control. The .env.example file shows the format without exposing your actual API key.
 
 ## Series Progress
 - ✅ Episode 1: Introduction to the challenge
@@ -127,8 +146,8 @@ Episode 6 will test connecting to the OpenAI API before we combine CLI with AI i
 - ✅ Episode 3: What tools you need
 - ✅ Episode 4a: Mac installation
 - ✅ Episode 4b: Windows installation
-- 🎯 **Episode 5: CLI basics** (You are here)
-- ⏭️ Episode 6: API connection testing
+- ✅ Episode 5: CLI basics
+- 🎯 **Episode 6: API connection testing** (You are here)
 - ⏭️ Episode 7: First working chat app
 - ⏭️ Episodes 8-10: Advanced features
 
