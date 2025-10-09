@@ -37,21 +37,23 @@ git pull origin episode-05-cli-app
 ```
 
 ### 2. Create and Activate Virtual Environment
-```bash
-# Mac/Linux - Create virtual environment
-python3 -m venv ai_project
+**Note**: You already created `ai_project` in Episodes 4a/4b - just activate it:
 
-# Windows - Create virtual environment  
-python -m venv ai_project
-```
-
-### 3. Activate Virtual Environment
 ```bash
 # Mac/Linux
 source ai_project/bin/activate
 
 # Windows
 ai_project\Scripts\activate
+```
+
+**Only if you skipped Episodes 4a/4b** - create the virtual environment first:
+```bash
+# Mac/Linux - Create virtual environment
+python3 -m venv ai_project
+
+# Windows - Create virtual environment  
+python -m venv ai_project
 ```
 
 You should see `(ai_project)` in your prompt.
@@ -61,6 +63,8 @@ You should see `(ai_project)` in your prompt.
 ```bash
 python cli_basics.py
 ```
+
+**To stop the program**: Press `Ctrl+C` (Mac/Windows/Linux)
 
 **Expected Output:**
 ```
