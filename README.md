@@ -1,5 +1,14 @@
 # Episode 2: Introduction to AI
 
+## Table of Contents
+- [What You'll Learn](#what-youll-learn)
+- [Key Concepts from This Episode](#key-concepts-from-this-episode)
+- [No Code Required](#no-code-required)
+- [Next Episode](#next-episode)
+- [Why This Matters](#why-this-matters)
+- [Series Progress](#series-progress)
+- [Repository Navigation](#repository-navigation)
+
 ## What You'll Learn
 Simple explanation of AI without technical jargon for complete beginners.
 
