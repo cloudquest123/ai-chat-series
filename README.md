@@ -47,9 +47,9 @@ You should see version numbers for both commands.
 Create an isolated Python environment for your project:
 
 ```bash
-# Create project folder
-mkdir ai-chat-project
-cd ai-chat-project
+# Clone or create project folder
+git clone https://github.com/cloudquest123/ai-chat-series.git
+cd ai-chat-series
 
 # Create virtual environment
 python3 -m venv ai_project
