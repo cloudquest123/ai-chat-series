@@ -23,10 +23,17 @@ A simple command-line interface that accepts user input and echoes it back. This
 
 ## Setup Instructions
 
-### 1. Create Project Directory
+### 1. Get the Code 
 ```bash
-mkdir ai-chat-project
-cd ai-chat-project
+# Clone the repository
+git clone https://github.com/cloudquest123/ai-chat-series.git
+cd ai-chat-series
+
+# Switch to this episode's branch  
+git checkout episode-05-cli-app
+
+# Pull latest changes
+git pull origin episode-05-cli-app
 ```
 
 ### 2. Create and Activate Virtual Environment
